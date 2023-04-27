@@ -1,34 +1,13 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { gql } from "@apollo/client";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { QueryResult } from "../../types/githubUserSearch";
+import { QueryResult } from "@/types/githubUserSearch";
 import UserCard from "./UserCard";
-import Spinner from "../ui/Spinner";
-import errorImage from "../../assets/search-error.png";
-import searchResultsImage from "../../assets/search-results.png";
-import noResultsImage from "../../assets/no-results.png";
-
-const SEARCH_USERS = gql`
-  query SearchUsers($query: String!, $cursor: String) {
-    search(type: USER, query: $query, first: 10, after: $cursor) {
-      pageInfo {
-        hasNextPage
-        endCursor
-      }
-      edges {
-        node {
-          ... on User {
-            id
-            login
-            avatarUrl
-            name
-          }
-        }
-      }
-    }
-  }
-`;
+import { SEARCH_USERS } from "@/api/queries";
+import EmptyState from "./UserListStates/EmptyState";
+import LoadingState from "./UserListStates/LoadingState";
+import ErrorState from "./UserListStates/ErrorState";
+import NoResultsState from "./UserListStates/NoResultsState";
 
 type UserListProps = {
   searchQuery: string;
@@ -43,6 +22,8 @@ const UserList = ({ searchQuery }: UserListProps) => {
     }
   );
 
+  const isSearchStringEmpty = searchQuery.length === 0;
+  const hasUsers = (data?.search.edges.length ?? 0) > 0;
   const fetchMoreUsers = () => {
     if (!data) return;
 
@@ -65,57 +46,13 @@ const UserList = ({ searchQuery }: UserListProps) => {
     });
   };
 
-  if (searchQuery.length === 0)
-    return (
-      <>
-        <div
-          className={
-            "flex items-center justify-center h-full w-full flex-col -translate-y-7"
-          }
-        >
-          <img src={searchResultsImage} alt="error" className="w-1/3 mx-auto" />
-          <p className={"text-gray-500 text-sm w-28 text-center"}>
-            Search results will appear here
-          </p>
-        </div>
-      </>
-    );
+  if (isSearchStringEmpty) return <EmptyState />;
 
-  if (loading)
-    return (
-      <div
-        className={
-          "flex items-center justify-center h-full w-full flex-col -translate-y-7"
-        }
-      >
-        <Spinner />
-      </div>
-    );
+  if (loading) return <LoadingState />;
 
-  if (error)
-    return (
-      <>
-        <div>
-          <img src={errorImage} alt="error" className="w-1/2 mx-auto" />
-          <p className="text-center text-2xl font-bold">Something went wrong</p>
-        </div>
-      </>
-    );
+  if (error) return <ErrorState />;
 
-  if (!data?.search.edges.length) {
-    return (
-      <div
-        className={
-          "flex items-center justify-center h-full w-full flex-col -translate-y-7"
-        }
-      >
-        <img src={noResultsImage} alt="error" className="w-1/3 mx-auto" />
-        <p className={"text-gray-500 text-sm w-28 text-center"}>
-          No results found
-        </p>
-      </div>
-    );
-  }
+  if (!hasUsers) return <NoResultsState />;
 
   return (
     <div className="pt-3">

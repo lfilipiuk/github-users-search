@@ -10,9 +10,9 @@ export default function App() {
       <div className={"max-w-xl"}>
         <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       </div>
-        <div className="pt-3 h-full overflow-scroll hide-scrollbar">
-            <UserList searchQuery={searchQuery} />
-        </div>
+      <div className="pt-3 h-full overflow-scroll hide-scrollbar">
+        <UserList searchQuery={searchQuery} />
+      </div>
     </>
   );
 }
