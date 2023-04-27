@@ -13,7 +13,7 @@ GitHub Users Search Tool is a React-based web application that allows users to s
   - Following
   - Company
   - Email
-  - Blog
+  - Website
 
 ## Technologies
 
