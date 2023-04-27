@@ -27,12 +27,10 @@ GitHub Users Search Tool is a React-based web application that allows users to s
 ## Getting Started
 
 1. Clone the repository:
-git clone https://github.com/your-username/github-users-search-tool.git
+git clone https://github.com/your-username/github-users-search.git
 cd github-users-search-tool
 
-2. Create a `.env` file in the root directory and add your GitHub token:
-
-`VITE_GITHUB_TOKEN=your-github-token-goes-here`
+2. Create a `.env` file in the root directory and add your GitHub token: `VITE_GITHUB_TOKEN=your-github-token-goes-here`
 
 3. Install dependencies:
 `npm install`
