@@ -9,7 +9,6 @@ import UserDetailsContent from "@/components/user/UserDetails/UserDetailsContent
 import LoadingState from "@/components/user/UserListStates/LoadingState";
 import ErrorState from "@/components/user/UserListStates/ErrorState";
 import NoResultsState from "@/components/user/UserListStates/NoResultsState";
-import {parseWebsiteUrl} from "@/utils/validation";
 
 type UserDetailsParams = {
   login: string;
@@ -39,8 +38,6 @@ const UserDetails = () => {
     navigate("/");
   };
 
-  const websiteUrlParsed = parseWebsiteUrl(websiteUrl);
-
   if(!login) return <NoResultsState />;
   if(!displayName) return <NoResultsState />;
 
@@ -66,7 +63,6 @@ const UserDetails = () => {
         company={company}
         email={email}
         websiteUrl={websiteUrl}
-        websiteUrlParsed={websiteUrlParsed}
       />
     </>
   );

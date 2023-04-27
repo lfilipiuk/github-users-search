@@ -11,7 +11,6 @@ type UserDetailsContentProps = {
   company: string | null;
   email: string | null;
   websiteUrl: string | null;
-  websiteUrlParsed: string;
 };
 
 const UserDetailsContent = React.memo(
@@ -24,7 +23,6 @@ const UserDetailsContent = React.memo(
     company,
     email,
     websiteUrl,
-    websiteUrlParsed,
   }: UserDetailsContentProps) => (
     <div
       key={login}
@@ -50,7 +48,6 @@ const UserDetailsContent = React.memo(
           company={company}
           email={email}
           websiteUrl={websiteUrl}
-          websiteUrlParsed={websiteUrlParsed}
         />
 
         <a

@@ -24,7 +24,7 @@ Tailwind UI is a library of pre-built components and templates built with Tailwi
 Heroicons is a library of free SVG icons built by the Tailwind CSS team. It was selected for its ease of use and ability to speed up the development process.
 
 
-### REST or GraphQL
+## REST or GraphQL
 Both REST and GraphQL are suitable for implementing the Github Users Search Tool, but each has its own advantages and drawbacks.
 
 1. REST:
@@ -46,7 +46,7 @@ Both REST and GraphQL are suitable for implementing the Github Users Search Tool
 
 In the context of the Github Users Search Tool GraphQL has been chosen due to its flexibility and ability to fetch only the required data in a single request. This can potentially result in better performance and reduced data usage. Additionally, the Github GraphQL API provides a comprehensive set of features that can simplify querying and retrieving user information.
 
-### Pagination with GraphQL
+## Pagination with GraphQL
 The fetchMoreUsers function is responsible for fetching additional GitHub users based on the search query when the user scrolls down and reaches the end of the displayed user list. This function is used to implement infinite scroll pagination in the UserList component.
 
 1. The function checks if the data object is available. If it's not, the function returns early without doing anything.
@@ -86,9 +86,9 @@ return newEdges.length
 ```
 By implementing the fetchMoreUsers function, the UserList component can seamlessly fetch and display additional users as the user scrolls down the page, providing a smooth infinite scroll pagination experience.
 
-### Refactoring
+## Refactoring
 
-#### Memoization
+### Memoization
 The UserDetailsContent component was memoized using React.memo() to optimize its performance. By memoizing the component, React will only re-render it when its props have changed. This means that if the parent component re-renders, the memoized UserDetailsContent will not be re-rendered unnecessarily if its props haven't changed.
 
 In this case, memoizing the component can help ensure that the user details are only re-rendered when the actual user data changes, rather than any time the parent component updates for other reasons.

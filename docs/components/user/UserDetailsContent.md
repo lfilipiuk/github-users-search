@@ -1,8 +1,8 @@
-### UserDetailsContent
+# UserDetailsContent
 
 The `UserDetailsContent` component displays detailed information about a GitHub user, including their avatar, name, follower and following counts, company, email, and website URL. It also provides a link to visit the user's GitHub profile.
 
-#### Props
+## Props
 
 - `login`: string (required) - The GitHub user's login (username).
 - `avatarUrl`: string (required) - The URL to the GitHub user's avatar image.
@@ -12,9 +12,8 @@ The `UserDetailsContent` component displays detailed information about a GitHub 
 - `company`: string | null - The GitHub user's company, if available.
 - `email`: string | null - The GitHub user's email, if available.
 - `websiteUrl`: string | null - The GitHub user's website URL, if available.
-- `websiteUrlParsed`: string (required) - The parsed GitHub user's website URL for display.
 
-#### Usage
+## Usage
 
 ```jsx
 import UserDetailsContent from "./UserDetailsContent";
@@ -28,11 +27,10 @@ import UserDetailsContent from "./UserDetailsContent";
   company="Example Inc."
   email="example@example.com"
   websiteUrl="www.example.com"
-  websiteUrlParsed="https://www.example.com"
 />;
 ```
 
-#### Implementation
+## Implementation
 
 The `UserDetailsContent` component is a memoized functional component that takes the props listed above as arguments.
 
