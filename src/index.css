@@ -1,4 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -37,7 +37,7 @@
 }
 
 :root {
-  font-family: Mona-Sans, "Roboto Condensed", serif;
+  font-family: Lexend, Mona-Sans, system-ui, sans-serif;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

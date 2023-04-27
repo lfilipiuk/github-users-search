@@ -107,28 +107,33 @@ const UserDetails: React.FC = () => {
                 <li className={"flex justify-between"}>
                   <div className={"flex gap-1"}>
                     <EnvelopeIcon
-                      className="h-6 w-6 flex-none text-gray-600"
-                      aria-hidden="true"
+                        className="h-6 w-6 flex-none text-gray-600"
+                        aria-hidden="true"
                     />
                     <p>Email</p>
                   </div>
-
-                  <div
-                    className={
-                      "flex gap-1 items-center justify-center group hover:cursor-pointer"
-                    }
-                  >
-                    <a
-                      href={`mailto:${email}`}
-                      className={"group-hover:underline"}
-                    >
-                      {email || "not available"}
-                    </a>
-                    <ArrowUpRightIcon
-                      className="h-5 w-5 flex-none text-gray-400 group-hover:text-gray-500 transition ease-in-out duration-200"
-                      aria-hidden="true"
-                    />
-                  </div>
+                  {email ? (
+                      <div
+                          className={
+                            "flex gap-1 items-center justify-center group hover:cursor-pointer"
+                          }
+                      >
+                        <a
+                            href={`https://${websiteUrl}`}
+                            className={"group-hover:underline"}
+                        >
+                          {websiteUrl}
+                        </a>
+                        <ArrowUpRightIcon
+                            className="h-5 w-5 flex-none text-gray-400 group-hover:text-gray-500 transition ease-in-out duration-200"
+                            aria-hidden="true"
+                        />
+                      </div>
+                  ) : (
+                      <div className={"flex gap-1 items-center justify-center"}>
+                        <span>not available</span>
+                      </div>
+                  )}
                 </li>
 
                 <li className={"flex justify-between"}>
