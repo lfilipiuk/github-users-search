@@ -5,7 +5,7 @@ import "./index.css";
 import { ApolloProvider } from "@apollo/client";
 import client from "./apolloClient";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import UserDetails from "./components/user/UserDetails";
+import UserDetails from "./components/user/UserDetails/UserDetails";
 import Layout from "./components/ui/Layout";
 
 const router = createBrowserRouter([

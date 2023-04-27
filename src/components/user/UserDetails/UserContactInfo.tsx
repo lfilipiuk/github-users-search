@@ -13,7 +13,7 @@ type UserDetailsListProps = {
   websiteUrlParsed: string;
 };
 
-const UserDetailsList = React.memo(
+const UserContactInfo = React.memo(
   ({ company, email, websiteUrl, websiteUrlParsed }: UserDetailsListProps) => (
     <ul className={"w-full flex gap-2 flex-col leading-7 text-gray-600"}>
       <li className={"flex justify-between"}>
@@ -87,4 +87,4 @@ const UserDetailsList = React.memo(
   )
 );
 
-export default UserDetailsList;
+export default UserContactInfo;

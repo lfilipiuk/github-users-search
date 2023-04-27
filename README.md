@@ -2,6 +2,11 @@
 
 GitHub Users Search Tool is a React-based web application that allows users to search for GitHub users by their usernames. The application displays a filtered list of users, with infinite scroll pagination for a smooth browsing experience. When you click on a user, the app navigates to a user's profile page, which provides additional information about the selected user.
 
+## Documentation
+For component documentation, please see the [components](docs/components.md) section.
+
+For development reflections, please see the [development-notes](docs/development-notes.md) section.
+
 ## Features
 
 - Search for GitHub users by username

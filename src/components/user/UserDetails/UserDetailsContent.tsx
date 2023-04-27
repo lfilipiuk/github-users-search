@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
-import UserDetailsList from "@/components/user/UserDetails/UserDetailsList";
+import UserContactInfo from "@/components/user/UserDetails/UserContactInfo";
 import React from "react";
 
 type UserDetailsContentProps = {
@@ -46,7 +46,7 @@ const UserDetailsContent = React.memo(
         </div>
         <hr className="h-px my-8 bg-gray-200 border-1 w-full" />
 
-        <UserDetailsList
+        <UserContactInfo
           company={company}
           email={email}
           websiteUrl={websiteUrl}
