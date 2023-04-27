@@ -18,10 +18,11 @@ GitHub Users Search Tool is a React-based web application that allows users to s
 ## Technologies
 
 - React
-- TypeScript (optional)
-- State management (optional: e.g., Redux or MobX)
-- UI libraries (optional: e.g., Material-UI, Ant Design, or Chakra UI)
-- Apollo Client (for GraphQL queries)
+- TypeScript
+- GraphQL
+- State management (Apollo)
+- UI libraries (Tailwind with Tailwind UI and Flowbite)
+
 
 ## Getting Started
 
@@ -31,13 +32,13 @@ cd github-users-search-tool
 
 2. Create a `.env` file in the root directory and add your GitHub token:
 
-VITE_GITHUB_TOKEN=your-github-token-goes-here
+`VITE_GITHUB_TOKEN=your-github-token-goes-here`
 
 3. Install dependencies:
-npm install
+`npm install`
 
 4. Start the development server:
-npm start
+`npm start`
 
 5. Open your browser and navigate to [http://localhost:5173](http://localhost:5173).
 
