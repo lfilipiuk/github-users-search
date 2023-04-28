@@ -16,6 +16,10 @@ The `UserList` component displays the list of searched GitHub users and handles 
 
 The `UserListItem` component is responsible for rendering individual user cards within the `UserList`.
 
+### [UserListStates](./components/user/UserListStates.md)
+
+The `UserListStates` are components responsible for rendering the different states of the `UserList` component.
+
 ### [UserDetails](./components/user/UserDetails.md)
 
 The `UserDetails` component displays detailed information about a specific GitHub user.
@@ -27,10 +31,6 @@ The `UserDetailsContent` component is responsible for rendering the content of t
 ### [UserContactInfo](./components/user/UserContactInfo.md)
 
 The `UserContactInfo` component is responsible for rendering the contact information of the `UserDetails` component.
-
-### [UserListStates](./components/user/UserListStates.md)
-
-The `UserListStates` are components responsible for rendering the different states of the `UserList` component.
 
 ## UI Components
 

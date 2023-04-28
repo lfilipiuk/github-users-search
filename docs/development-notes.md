@@ -11,6 +11,9 @@ TypeScript was chosen for its ability to catch errors at compile time, which hel
 ### Apollo Client
 Apollo Client is a comprehensive state management library for JavaScript that integrates with GraphQL. It was selected for its ease of use, caching capabilities, and seamless integration with React.
 
+### Redux
+Redux was chosen for global state management. In the application it remembers the current search, but can be used to expand global state management as the application grows.
+
 ### GraphQL
 GraphQL was chosen for its flexibility, strong typing, and ability to fetch only the necessary data. GraphQL provides a more efficient and organized approach to data retrieval compared to traditional REST APIs.
 
