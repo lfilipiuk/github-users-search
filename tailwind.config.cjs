@@ -5,8 +5,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "mona-sans": ["Mona Sans", "sans-serif"],
-        "hubot-sans": ["Hubot Sans", "sans-serif"],
         "hubot-sans-narrow": ["Hubot Sans Bold Narrow", "sans-serif"],
       },
     },
