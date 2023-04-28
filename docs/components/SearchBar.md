@@ -8,7 +8,6 @@ The `SearchBar` component provides a search input field for the user to enter a 
 import SearchBar from './components/SearchBar';
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState('');
 
   return (
     <div>
