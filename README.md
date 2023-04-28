@@ -31,7 +31,7 @@ For development reflections, please see the [development-notes](docs/development
 ## Getting Started
 
 1. Clone the repository:
-git clone https://github.com/your-username/github-users-search.git
+git clone https://github.com/lfilipiuk/github-users-search.git
 cd github-users-search-tool
 
 2. Create a `.env` file in the root directory and add your GitHub token: `VITE_GITHUB_TOKEN=your-github-token-goes-here`
