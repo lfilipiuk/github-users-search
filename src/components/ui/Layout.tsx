@@ -20,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
           </Link>
           <header className="py-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h1 className="text-5xl text-white font-hubot-sans-narrow">
+              <h1 className="md:text-5xl text-4xl text-white font-hubot-sans-narrow">
                 GITHUB USER SEARCH
               </h1>
             </div>
