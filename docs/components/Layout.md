@@ -6,7 +6,7 @@ The `Layout` component is a wrapper component that provides a consistent structu
 
 The component takes the following props:
 
-- `children` (React.ReactNod): The content to be rendered inside the layout.
+- `children` (React.ReactNode): The content to be rendered inside the layout.
 
 ## Usage
 
