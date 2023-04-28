@@ -16,7 +16,7 @@ import UserDetails from "./UserDetails";
 
 ## Implementation
 
-The `UserDetails` component uses the `useParams` hook from `react-router-dom` to extract the `login` parameter from the URL. It then uses the `useQuery` hook from `@apollo/client` to fetch the user's details from the GitHub API, using the `SEARCH_USER_DETAILS` query.
+The `UserDetails` component uses the `useParams` hook from `react-router-dom` to extract the `login` parameter from the URL. It then uses the `useQuery` hook from `@apollo/client` to fetch the user's details from the GitHub API.
 
 While the data is being fetched, a `LoadingState` component is displayed. If there's an error during the fetch, an `ErrorState` component is shown. If no data is returned, a `NoResultsState` component is displayed.
 
