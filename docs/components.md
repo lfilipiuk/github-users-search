@@ -12,9 +12,9 @@ The `SearchBar` component is responsible for rendering the search input field an
 
 The `UserList` component displays the list of searched GitHub users and handles pagination.
 
-### [UserCard](./components/user/UserCard.md)
+### [UserListItem](./components/user/UserListItem.md)
 
-The `UserCard` component is responsible for rendering individual user cards within the `UserList`.
+The `UserListItem` component is responsible for rendering individual user cards within the `UserList`.
 
 ### [UserDetails](./components/user/UserDetails.md)
 

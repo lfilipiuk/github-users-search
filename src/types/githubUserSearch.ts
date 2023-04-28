@@ -3,14 +3,14 @@ export type PageInfo = {
     endCursor: string;
 };
 
-export type UserListItem = {
+export type UserSummary = {
     id: string;
     login: string;
     avatarUrl: string;
     name: string;
 };
 
-export type UserDetailsItem = {
+export type UserProfile = {
     id: string;
     login: string;
     avatarUrl: string;
@@ -30,7 +30,7 @@ export type SearchResult = {
     __typename: string;
     pageInfo: PageInfo;
     edges: Array<{
-        node: UserListItem;
+        node: UserSummary;
     }>;
 };
 

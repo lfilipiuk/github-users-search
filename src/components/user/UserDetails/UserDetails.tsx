@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { UserDetailsItem } from "@/types/githubUserSearch";
+import { UserProfile } from "@/types/githubUserSearch";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 import { useNavigate } from "react-router-dom";
 import { SEARCH_USER_DETAILS } from "@/api/queries";
@@ -17,7 +17,7 @@ type UserDetailsParams = {
 const UserDetails = () => {
   const navigate = useNavigate();
   const { login } = useParams<UserDetailsParams>();
-  const { data, loading, error } = useQuery<{ user: UserDetailsItem }>(
+  const { data, loading, error } = useQuery<{ user: UserProfile }>(
     SEARCH_USER_DETAILS,
     {
       variables: { login },

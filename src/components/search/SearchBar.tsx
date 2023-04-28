@@ -1,19 +1,20 @@
-import React, {ChangeEvent, MouseEvent} from "react";
-import {MagnifyingGlassIcon} from "@heroicons/react/20/solid";
+import React, { ChangeEvent, MouseEvent} from "react";
+import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+import {useDispatch, useSelector} from "react-redux";
+import {getSearchQuery, setSearchQuery} from "@/store/searchSlice";
 
-type SearchBarProps = {
-  searchQuery: string;
-  setSearchQuery: (searchQuery: string) => void;
-};
+const SearchBar = () => {
+    const dispatch = useDispatch();
+    const searchQuery = useSelector(getSearchQuery);
 
-const SearchBar = ({ searchQuery, setSearchQuery }: SearchBarProps) => {
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(event.target.value);
+      const query = event.target.value;
+      dispatch(setSearchQuery(query));
   };
 
   const clearUserSearch = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setSearchQuery("");
+    dispatch(setSearchQuery(""));
   };
 
   return (
@@ -29,7 +30,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }: SearchBarProps) => {
           <MagnifyingGlassIcon
             className="w-5 h-5 text-gray-400"
             aria-hidden="true"
-            />
+          />
         </div>
         <input
           type="search"

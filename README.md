@@ -24,10 +24,9 @@ For development reflections, please see the [development-notes](docs/development
 
 - React
 - TypeScript
-- GraphQL
-- State management (Apollo)
+- GraphQL with Apollo Client
+- Redux
 - UI libraries (Tailwind with Tailwind UI and Flowbite)
-
 
 ## Getting Started
 

@@ -2,18 +2,17 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { QueryResult } from "@/types/githubUserSearch";
-import UserCard from "./UserCard";
+import UserListItem from "./UserListItem";
 import { SEARCH_USERS } from "@/api/queries";
 import EmptyState from "./UserListStates/EmptyState";
 import LoadingState from "./UserListStates/LoadingState";
 import ErrorState from "./UserListStates/ErrorState";
 import NoResultsState from "./UserListStates/NoResultsState";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
-type UserListProps = {
-  searchQuery: string;
-};
-
-const UserList = ({ searchQuery }: UserListProps) => {
+const UserList = () => {
+  const searchQuery = useSelector((state: RootState) => state.search.query);
   const { data, loading, error, fetchMore } = useQuery<QueryResult>(
     SEARCH_USERS,
     {
@@ -71,7 +70,7 @@ const UserList = ({ searchQuery }: UserListProps) => {
             <ul role="list" className="divide-y divide-gray-100">
               {data.search.edges.map(
                 ({ node: user }) =>
-                  user.id && <UserCard key={user.id} user={user} />
+                  user.id && <UserListItem key={user.id} user={user} />
               )}
             </ul>
           </InfiniteScroll>

@@ -7,6 +7,8 @@ import client from "./apolloClient";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import UserDetails from "./components/user/UserDetails/UserDetails";
 import Layout from "./components/ui/Layout";
+import { Provider } from "react-redux";
+import { store } from "@/store/store";
 
 const router = createBrowserRouter([
   {
@@ -29,8 +31,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <RouterProvider router={router} />
-    </ApolloProvider>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <RouterProvider router={router} />
+      </ApolloProvider>
+    </Provider>
   </React.StrictMode>
 );

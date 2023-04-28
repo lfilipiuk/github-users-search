@@ -94,3 +94,9 @@ The UserDetailsContent component was memoized using React.memo() to optimize its
 In this case, memoizing the component can help ensure that the user details are only re-rendered when the actual user data changes, rather than any time the parent component updates for other reasons.
 
 Another reason for memoization was the fact, it was brought up during the interview :)
+
+## Redux
+
+When the user navigated back from the user details page to the main search page, the previous search results where not retained, and the user had to perform the search again.
+
+I implemented the Redux library to manage the global state of the search query, enabling the app to preserve the last search results when navigating back to the main search page.

@@ -16,8 +16,8 @@ const GithubUserSearch = () => {
 
   return (
     <div>
-      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <UserList searchQuery={searchQuery} />
+      <SearchBar/>
+      <UserList />
     </div>
   );
 };
@@ -25,14 +25,9 @@ const GithubUserSearch = () => {
 export default GithubUserSearch;
 ```
 
-## Props
-The component takes the following props:
-
-- `searchQuery` (string): The search query used to fetch the list of GitHub users.
-
 ## Dependencies
 The `UserList` component depends on the following libraries and components:
 - @apollo/client: Used for fetching data from the GitHub GraphQL API.
 - [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component): Used for implementing infinite scroll pagination.
-- [UserCard](UserCard.md): Custom component used to display individual user information.
+- [UserListItem](UserListItem.md): Custom component used to display individual user information.
 - [EmptyState, LoadingState, ErrorState, NoResultsState](UserListStates.md): Custom components to represent different states of the user list.

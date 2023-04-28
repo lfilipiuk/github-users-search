@@ -1,13 +1,13 @@
 import React from "react";
-import { UserListItem } from "@/types/githubUserSearch";
+import { UserSummary } from "@/types/githubUserSearch";
 import { Link } from "react-router-dom";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 
-type UserCardProps = {
-  user: UserListItem;
+type UserListItemProps = {
+  user: UserSummary;
 };
 
-const UserCard= ({ user } : UserCardProps) => {
+const UserListItem= ({ user } : UserListItemProps) => {
   const displayName = user.name || user.login;
 
   return (
@@ -37,4 +37,4 @@ const UserCard= ({ user } : UserCardProps) => {
   );
 };
 
-export default UserCard;
+export default UserListItem;
