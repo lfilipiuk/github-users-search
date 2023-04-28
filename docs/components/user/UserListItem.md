@@ -5,13 +5,13 @@ The `UserListItem` component represents an individual GitHub user displayed in t
 ## Props
 The component takes the following props:
 
-- `user` (UserListItem): An object containing the user's data from the GitHub API
+- `user` (UserSummary): An object containing the user's data from the GitHub API
 
 ## Usage
 
 ```tsx
 import UserListItem from "./UserListItem";
-import { UserListItem } from "@/types/githubUserSearch";
+import { UserSummary } from "@/types/githubUserSearch";
 
 const user: UserListItem = {
   // ...GitHub user data
