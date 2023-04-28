@@ -35,7 +35,7 @@ const SearchBar = () => {
         <input
           type="search"
           id="default-search"
-          className="block w-full h-12 p-2 pl-10 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+          className="block w-full h-12 p-2 pl-10 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 searchInput"
           placeholder="Search users..."
           value={searchQuery}
           onChange={handleSearchInput}
