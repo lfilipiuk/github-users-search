@@ -122,3 +122,20 @@ Unlike Redux, which requires actions and reducers to update state, reactive vari
 
 To use reactive variables in a React component, you can make use of the useReactiveVar hook provided by Apollo Client. This hook subscribes to changes in the reactive variable and causes your component to re-render whenever the reactive variable's value changes.
 
+### It’s better to move useQuery with search to separate hook
+
+In the context of our application, we have two main data fetching needs: searching users based on a query string, and fetching the details of a specific user. To make our React components cleaner and more focused on rendering logic, we extracted these data fetching operations into two custom hooks: `useUserSearchQuery` and `useUserDetailsQuery`.
+
+#### `useUserSearchQuery` Hook
+
+This hook is used to search users based on a query string. It internally uses the Apollo Client's `useQuery` hook with the `SEARCH_USERS` GraphQL query. The query string is passed as a variable to the `useQuery` hook.
+
+#### `useUserDetailsQuery` Hook
+
+This hook is used to fetch the details of a specific user. It also uses the `useQuery` hook but with the `SEARCH_USER_DETAILS` GraphQL query. The username (login) is passed as a variable to the `useQuery` hook.
+
+#### Why Two Hooks?
+
+Each hook is designed for a specific purpose. Keeping them separate helps maintain the single responsibility principle, making our code easier to understand, maintain, and test. It also enhances reusability since each hook can be used in any other component where the same data fetching operation is needed.
+
+Although both hooks use the `useQuery` hook, the GraphQL queries and the variables passed to them are different. Therefore, it makes sense to keep them in separate hooks instead of combining them into one. This way, if we need to modify how we fetch user details, we only need to modify `useUserDetailsQuery`, without affecting `useUserSearchQuery`, and vice versa.

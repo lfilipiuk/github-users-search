@@ -1,49 +1,20 @@
 import React from "react";
-import { useQuery } from "@apollo/client";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { QueryResult } from "@/types/githubUserSearch";
 import UserListItem from "./UserListItem";
-import { SEARCH_USERS } from "@/utils/queries";
 import EmptyState from "./UserListStates/EmptyState";
 import LoadingState from "./UserListStates/LoadingState";
 import ErrorState from "./UserListStates/ErrorState";
 import NoResultsState from "./UserListStates/NoResultsState";
 import { searchQueryVar } from "@/utils/searchState";
 import { useReactiveVar } from "@apollo/client";
+import {useUserSearchQuery} from "@/utils/useUserSearchQuery";
 
 const UserList = () => {
   const searchQuery = useReactiveVar(searchQueryVar);
-  const { data, loading, error, fetchMore } = useQuery<QueryResult>(
-    SEARCH_USERS,
-    {
-      variables: { query: `${searchQuery} in:login` },
-      skip: !searchQuery,
-    }
-  );
+  const { data, loading, error, fetchMoreUsers } = useUserSearchQuery(searchQuery);
 
   const isSearchStringEmpty = searchQuery.length === 0;
   const hasUsers = (data?.search.edges.length ?? 0) > 0;
-  const fetchMoreUsers = () => {
-    if (!data) return;
-
-    fetchMore({
-      variables: { cursor: data.search.pageInfo.endCursor },
-      updateQuery: (prevResult, { fetchMoreResult }) => {
-        const newEdges = fetchMoreResult.search.edges;
-        const pageInfo = fetchMoreResult.search.pageInfo;
-
-        return newEdges.length
-          ? {
-              search: {
-                __typename: prevResult.search.__typename,
-                edges: [...prevResult.search.edges, ...newEdges],
-                pageInfo,
-              },
-            }
-          : prevResult;
-      },
-    });
-  };
 
   if (isSearchStringEmpty) return <EmptyState />;
 

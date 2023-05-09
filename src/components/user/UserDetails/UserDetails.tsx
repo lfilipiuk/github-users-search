@@ -1,14 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
-import { UserProfile } from "@/types/githubUserSearch";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 import { useNavigate } from "react-router-dom";
-import { SEARCH_USER_DETAILS } from "@/utils/queries";
 import UserDetailsContent from "@/components/user/UserDetails/UserDetailsContent";
 import LoadingState from "@/components/user/UserListStates/LoadingState";
 import ErrorState from "@/components/user/UserListStates/ErrorState";
 import NoResultsState from "@/components/user/UserListStates/NoResultsState";
+import {useUserDetailsQuery} from "@/utils/useUserDetailsQuery";
 
 type UserDetailsParams = {
   login: string;
@@ -17,12 +15,12 @@ type UserDetailsParams = {
 const UserDetails = () => {
   const navigate = useNavigate();
   const { login } = useParams<UserDetailsParams>();
-  const { data, loading, error } = useQuery<{ user: UserProfile }>(
-    SEARCH_USER_DETAILS,
-    {
-      variables: { login },
-    }
-  );
+
+  if(!login) {
+    return <NoResultsState />;
+  }
+
+  const { data, loading, error } = useUserDetailsQuery(login);
 
   if (loading) return <LoadingState />;
 
