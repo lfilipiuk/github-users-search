@@ -1,6 +1,6 @@
 import React from "react";
 import githubLogo from "../../assets/github-logo.svg";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,9 +13,9 @@ const Layout = ({ children }: LayoutProps) => {
         <div className="bg-gray-800 pt-16 pb-32 flex items-center justify-center flex-col">
           <Link to="/">
             <img
-                className="h-16 w-16 opacity-70"
-                src={githubLogo}
-                alt="GitHub logo"
+              className="h-16 w-16 opacity-70"
+              src={githubLogo}
+              alt="GitHub logo"
             />
           </Link>
           <header className="py-10">

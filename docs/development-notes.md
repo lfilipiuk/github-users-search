@@ -103,3 +103,12 @@ Another reason for memoization was the fact, it was brought up during the interv
 When the user navigated back from the user details page to the main search page, the previous search results where not retained, and the user had to perform the search again.
 
 I implemented the Redux library to manage the global state of the search query, enabling the app to preserve the last search results when navigating back to the main search page.
+
+## Code Review
+
+I had my code reviewed by experienced developers, and I received some valuable feedback. I have implemented some of the suggestions, and I have added the rest to my backlog.
+
+### Code style (need to add eslint)
+Eslint is a static code analysis tool for identifying problematic patterns found in JavaScript and TypeScript code. It's a great way to enforce a consistent style across your codebase. This can include anything from enforcing the use of semi-colons, to the way your code is indented, to more complex patterns. By adding eslint, you're making it easier for other developers to understand and contribute to your code.
+
+I added ESLint to my configuration, and I will use it in the future.
