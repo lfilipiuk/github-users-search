@@ -1,4 +1,5 @@
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
+import {relayStylePagination} from "@apollo/client/utilities";
 
 const httpLink = new HttpLink({
     uri: 'https://api.github.com/graphql',
@@ -7,9 +8,19 @@ const httpLink = new HttpLink({
     },
 });
 
+const cache = new InMemoryCache({
+    typePolicies: {
+        Query: {
+            fields: {
+                search: relayStylePagination(["query"]),
+            },
+        },
+    },
+});
+
 const client = new ApolloClient({
     link: httpLink,
-    cache: new InMemoryCache(),
+    cache,
 });
 
 export default client;

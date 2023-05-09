@@ -145,3 +145,13 @@ Although both hooks use the `useQuery` hook, the GraphQL queries and the variabl
 In React, a `key` is a special string attribute you need to include when creating lists of elements. If using a key in `UserDetailsContent` and it's not being used for the purpose of identifying elements in a list, then it might not be necessary.
 
 It was removed.
+
+### It’s better to use relayStylePagination instead of updateQuery inside fetchMore
+
+Apollo Client offers a number of utility functions that allow you to deal with common tasks when interacting with a GraphQL API. One such utility is `relayStylePagination`, a function that provides an out-of-the-box solution for handling pagination in the style of the Relay specification.
+
+Previously, I was manually managing the process of updating the cache when fetching more data, using the updateQuery option of the fetchMore function.
+
+I have now refactored Apollo Client setup to use relayStylePagination for handling pagination automatically. This has simplified our fetchMoreUsers function in the useUserSearchQuery hook, as I no longer need to provide an updateQuery function. The merging of new and existing page data is handled by relayStylePagination.
+
+I wish I'd known about this. It would have saved me a lot of time.
