@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import { UserProfile } from "@/types/githubUserSearch";
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 import { useNavigate } from "react-router-dom";
-import { SEARCH_USER_DETAILS } from "@/api/queries";
+import { SEARCH_USER_DETAILS } from "@/utils/queries";
 import UserDetailsContent from "@/components/user/UserDetails/UserDetailsContent";
 import LoadingState from "@/components/user/UserListStates/LoadingState";
 import ErrorState from "@/components/user/UserListStates/ErrorState";

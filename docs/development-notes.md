@@ -112,3 +112,13 @@ I had my code reviewed by experienced developers, and I received some valuable f
 Eslint is a static code analysis tool for identifying problematic patterns found in JavaScript and TypeScript code. It's a great way to enforce a consistent style across your codebase. This can include anything from enforcing the use of semi-colons, to the way your code is indented, to more complex patterns. By adding eslint, you're making it easier for other developers to understand and contribute to your code.
 
 I added ESLint to my configuration, and I will use it in the future.
+
+### Redux is extra. It’s possible to use reactive variables instead or just local state with query params
+Redux is a predictable state container for JavaScript applications and is often used in larger applications for state management. However, in smaller applications or in certain scenarios, using Redux can be overkill and can add unnecessary complexity. Using local state with query parameters can be a simpler and more straightforward approach for state management in some cases. Reactive variables are another option for state management that can be less complex and more performant than Redux in certain scenarios.
+
+Reactive variables are a powerful feature of Apollo Client that can be used to manage local state in your application, providing an alternative to more complex state management libraries like Redux.
+
+Unlike Redux, which requires actions and reducers to update state, reactive variables provide a simpler API for state management: you can read their current value by calling them as a function without arguments, and update their value by calling them with a new value as an argument. Reactive variables can be used anywhere in your code and do not require a particular context to function.
+
+To use reactive variables in a React component, you can make use of the useReactiveVar hook provided by Apollo Client. This hook subscribes to changes in the reactive variable and causes your component to re-render whenever the reactive variable's value changes.
+

@@ -3,16 +3,16 @@ import { useQuery } from "@apollo/client";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { QueryResult } from "@/types/githubUserSearch";
 import UserListItem from "./UserListItem";
-import { SEARCH_USERS } from "@/api/queries";
+import { SEARCH_USERS } from "@/utils/queries";
 import EmptyState from "./UserListStates/EmptyState";
 import LoadingState from "./UserListStates/LoadingState";
 import ErrorState from "./UserListStates/ErrorState";
 import NoResultsState from "./UserListStates/NoResultsState";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
+import { searchQueryVar } from "@/utils/searchState";
+import { useReactiveVar } from "@apollo/client";
 
 const UserList = () => {
-  const searchQuery = useSelector((state: RootState) => state.search.query);
+  const searchQuery = useReactiveVar(searchQueryVar);
   const { data, loading, error, fetchMore } = useQuery<QueryResult>(
     SEARCH_USERS,
     {

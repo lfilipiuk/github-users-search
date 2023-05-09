@@ -1,20 +1,21 @@
 import React, { ChangeEvent, MouseEvent} from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import {useDispatch, useSelector} from "react-redux";
-import {getSearchQuery, setSearchQuery} from "@/store/searchSlice";
+import {searchQueryVar} from "@/utils/searchState";
+
+import {setSearchQuery} from "@/utils/searchState";
+import {useReactiveVar} from "@apollo/client";
 
 const SearchBar = () => {
-    const dispatch = useDispatch();
-    const searchQuery = useSelector(getSearchQuery);
+    const searchQuery = useReactiveVar(searchQueryVar);
 
   const handleSearchInput = (event: ChangeEvent<HTMLInputElement>) => {
       const query = event.target.value;
-      dispatch(setSearchQuery(query));
+      setSearchQuery(query);
   };
 
   const clearUserSearch = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    dispatch(setSearchQuery(""));
+      setSearchQuery("");
   };
 
   return (
