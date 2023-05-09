@@ -6,7 +6,7 @@ import UserDetailsContent from "@/components/user/UserDetails/UserDetailsContent
 import LoadingState from "@/components/user/UserListStates/LoadingState";
 import ErrorState from "@/components/user/UserListStates/ErrorState";
 import NoResultsState from "@/components/user/UserListStates/NoResultsState";
-import {useUserDetailsQuery} from "@/utils/useUserDetailsQuery";
+import { useUserDetailsQuery } from "@/utils/useUserDetailsQuery";
 
 type UserDetailsParams = {
   login: string;
@@ -16,7 +16,7 @@ const UserDetails = () => {
   const navigate = useNavigate();
   const { login } = useParams<UserDetailsParams>();
 
-  if(!login) {
+  if (!login) {
     return <NoResultsState />;
   }
 
@@ -26,18 +26,18 @@ const UserDetails = () => {
 
   if (error) return <ErrorState />;
 
-  if (!data) return <NoResultsState />;
+  if (!data || !data.user) return <NoResultsState />;
 
   const { avatarUrl, name, followers, following, company, email, websiteUrl } =
-    data!.user;
+    data.user;
   const displayName = name || login;
 
   const handleBackButtonClick = () => {
     navigate("/");
   };
 
-  if(!login) return <NoResultsState />;
-  if(!displayName) return <NoResultsState />;
+  if (!login) return <NoResultsState />;
+  if (!displayName) return <NoResultsState />;
 
   return (
     <>

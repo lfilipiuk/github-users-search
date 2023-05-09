@@ -65,4 +65,6 @@ const UserDetailsContent = React.memo(
   )
 );
 
+UserDetailsContent.displayName = "UserDetailsContent";
+
 export default UserDetailsContent;

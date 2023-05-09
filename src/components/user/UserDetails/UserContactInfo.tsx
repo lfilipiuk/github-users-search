@@ -76,6 +76,7 @@ const UserContactInfo = React.memo(
                 href={websiteUrlParsed}
                 className={"group-hover:underline"}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {websiteUrl}
               </a>
@@ -95,4 +96,5 @@ const UserContactInfo = React.memo(
   }
 );
 
+UserContactInfo.displayName = 'UserContactInfo';
 export default UserContactInfo;
