@@ -25,7 +25,6 @@ const UserDetailsContent = React.memo(
     websiteUrl,
   }: UserDetailsContentProps) => (
     <div
-      key={login}
       className="flex flex-col items-center gap-2 mx-auto justify-center"
     >
       <img

@@ -139,3 +139,9 @@ This hook is used to fetch the details of a specific user. It also uses the `use
 Each hook is designed for a specific purpose. Keeping them separate helps maintain the single responsibility principle, making our code easier to understand, maintain, and test. It also enhances reusability since each hook can be used in any other component where the same data fetching operation is needed.
 
 Although both hooks use the `useQuery` hook, the GraphQL queries and the variables passed to them are different. Therefore, it makes sense to keep them in separate hooks instead of combining them into one. This way, if we need to modify how we fetch user details, we only need to modify `useUserDetailsQuery`, without affecting `useUserSearchQuery`, and vice versa.
+
+### Key inside UserDetailsContent is extra
+
+In React, a `key` is a special string attribute you need to include when creating lists of elements. If using a key in `UserDetailsContent` and it's not being used for the purpose of identifying elements in a list, then it might not be necessary.
+
+It was removed.
